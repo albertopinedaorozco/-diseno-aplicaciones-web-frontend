@@ -20,7 +20,7 @@ const Private = (props) => {
 
         <Switch>
           <Route exact path="/" component={Tweets} />
-          <Route path="/profile/:username" component={Profile} />
+          <Route exact path="/Profile/:username?/:userId?"><Profile/></Route>
         </Switch>
 
   </div>;
