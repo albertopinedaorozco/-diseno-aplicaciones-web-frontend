@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import NewTweet from './../NewTweet';
 import Tweet from './../Tweet';
+import { Link } from 'react-router-dom';
+
 
 const Tweets = () => {
     const [tweets, setTweets] = useState([]);
@@ -31,6 +33,9 @@ const Tweets = () => {
 
     return (
         <>
+            <ul>
+                <li><Link to="/Profile/">Profile</Link></li>
+            </ul>
             <NewTweet addTweet={addTweet} />
             <h2>Tweets</h2>
             {
