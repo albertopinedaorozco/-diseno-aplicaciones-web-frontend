@@ -17,7 +17,10 @@ const Login = (props) => {
             password
         };
         const api = process.env.REACT_APP_API_URL;
+        
         const url = `${api}/users/login`;
+        console.log(url)
+        console.log(" El objeto usuario que se envia " + JSON.stringify(user))
         fetch(url, {
             method: "POST",
             headers:{
@@ -27,17 +30,20 @@ const Login = (props) => {
         })
         .then(res=>res.json())
         .then(json=>{
+            //console.log(json)
             const user = {
                 id: json.id,
                 name: json.name,
                 username: json.username
             };
+            console.log(user)
+            console.log(json.token)
             localStorage.setItem("user", JSON.stringify(user));
             localStorage.setItem('token', json.token);
             props.setIsAuth(true);
             history.push("/");
         })
-        .catch(err=>console.log("Usuario no existe"));
+        .catch(err=>console.log("Usuario no existe " + err));
     };
 
     return (

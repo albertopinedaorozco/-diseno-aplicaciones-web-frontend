@@ -13,7 +13,7 @@ const Public = (props) => {
     <Route path="/login">
         <Login setIsAuth={props.setIsAuth} />
     </Route>
-    <Route path="/signup" component={SignUp}></Route>
+    <Route path="/signup" component={() => <SignUp setIsAuth={props.setIsAuth} />}></Route>
     <Route path="/passwordRecovery" component={PasswordRecovery}></Route>
     <Route exact path="/" component={Home}></Route>
   </Switch>

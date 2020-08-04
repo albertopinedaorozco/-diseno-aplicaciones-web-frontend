@@ -1,8 +1,11 @@
-import React from 'react';
+
+import React, { useState, useEffect} from 'react';
 import {Link, useParams} from 'react-router-dom';
+import Tweet from '../Tweet';
 
 const Profile = (props) => {
     const params = useParams();
+   // console.log(params)
     const [tweets, setTweets] = useState();
 
     const getTweets = () => {
@@ -15,6 +18,7 @@ const Profile = (props) => {
             }
         }).then(res => res.json())
         .then(json => {
+            console.log(json)
             setTweets(json)
         });
     }

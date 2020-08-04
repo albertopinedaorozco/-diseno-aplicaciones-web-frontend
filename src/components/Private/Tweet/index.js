@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 const Tweet = (props) => {
-
+    console.log(props)
     return (
         <>
             <p>{props.tweet.content}</p>
